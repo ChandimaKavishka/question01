@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <style>
+      
+    </style>
+
+    <!-- <link rel="validation" href="validation.js"> -->
+
+</head>
+
+
+<body>
+
+
+
+    <div class="new">
+
+        <form id="form" class="form" onsubmit="return validateform()" >
+
+            <h1>
+                Register
+            </h1>
+
+            <div class="input_box">
+
+                <label for="fname">First Name : </label>
+                <input type="text" id="fname" placeholder="Enter your first name"><br><br>
+                <span style="color: red;" id="fname_error"></span>
+
+            </div>
+            <div class="input_box">
+
+                <label for="lname">Last Name : </label>
+                <input type="text" id="lname"  placeholder="Enter your last name"><br><br>
+
+                <span style="color: red;" id="lname_error"></span>
+            </div>
+            <div class="input_box">
+                <label for="adress">Address : </label>
+                <input type="text" id="address" placeholder="Enter your Address"><br><br>
+                <span style="color: red;" id="address_error"></span>
+            </div>
+            <div class="input_box">
+                <label for="name">Email : </label>
+                <input type="text" id="email" placeholder="Enter your Email"><br><br>
+                <p style="color: red;" id="Email4error"></p><br>
+            </div>
+            <div class="input_box">
+                <label for="Tell">Tel No : </label>
+                <input type="text" id="telno" placeholder="Enter your Phone Number"><br><br>
+                
+            </div>
+
+            <div class="input_box">
+                <label for="gender">Gender :</label>
+                <input type="radio" id="male" value="male" name="gender">
+                <label for="male">Male</label>
+                <input type="radio" id="female" value="female" name="gender">
+                <label for="fmale">Female</label><br><br>
+                <span style="color: red;" id="gender_error"></span>
+
+            </div>
+
+            <!-- <p>choose it</p>
+            <input type="checkbox" id="car" name="">car <br>
+            <input type="checkbox" id="bike"> bike <br>
+            <input type="checkbox" id="bus" name="">bus <br>
+
+
+            <textarea name="" id="texta" cols="30" rows="10"></textarea><br><br> -->
+            <div class="input_box">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password"><br><br>
+                <p style="color: red;" id="Password14error"></p><br>
+            </div>
+
+           <button type="submit"> Submit</button>
+           <button type="reset"> Reset</button>
+
+
+        </form>
+
+        <!-- <script type="text/javascript">
+
+            function validate()
+            {
+                var first = document.forms["myform"]["fname"].value;
+                var lname = document.forms["myform"]["lname"].value;
+                var address = document.forms["myform"]["address"].value;
+                var email = document.forms["myform"]["email"].value;
+                var telno = document.forms["myform"]["telno"].value;
+                var gender = document.forms["myform"]["gender"].value;
+                var   = document.forms["myform"]["fname"].value;
+            }
+
+        </script> -->
+
+    </div>
+<!-- <script src="validation.js"></script> -->
+
+<script>
+    function validateform() {
+
+
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+
+        var Email4error = document.getElementById("Email4error");
+        var Password14error = document.getElementById("Password14error");
+
+        var email_check = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{3,}$/;
+        var password_check = /^[a-zA-Z0-9@.]{8,}/$;
+
+
+
+        if (!email_check.test(email)) {
+
+            Email4error.innerHTML = "Please enter a valid email";
+            return false;
+        }
+
+        if (!password_check.test(password)) {
+            Password14error.innerHTML = "Please enter correct password";
+            return false;
+
+        }
+    }
+</script>
+
+</body>
+
+</html>
